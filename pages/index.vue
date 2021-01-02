@@ -1,34 +1,67 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        pocket-combats
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <Logo />
+    <Header :showAge="true" :age="age" />
+
+    Name: {{ name }}
+    <br>
+    Age: {{ age }}
+    <br>
+    After {{ plusAge }} years i will be: {{ futureAge }}
+    <br>
+    <br>
+    <b-button
+      :title="`My age is: ${age}`"
+      variant="outline-primary"
+      @click="buttonHandler"
+    >Makes me older</b-button>
+
+    <br>
+
+    <b-button
+      :title="`My age is: ${age}`"
+      variant="outline-primary"
+      v-on:click="makesMeYounger"
+    >Makes me younger</b-button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'InfoPage',
+
+  data () {
+    return {
+      name: 'Anton',
+      age: 18,
+      plusAge: 10
+    }
+  },
+
+  computed: {
+    futureAge () {
+      return this.age + this.plusAge
+    }
+  },
+
+  mounted () {},
+
+  methods: {
+    buttonHandler () {
+      this.age = this.age + 1
+    },
+
+    makesMeYounger () {
+      this.age -= 5
+    }
+  }
+}
 </script>
 
 <style>
@@ -39,6 +72,7 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
 }
 
 .title {
