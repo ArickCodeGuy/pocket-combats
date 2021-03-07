@@ -26,8 +26,8 @@
         style="background-image: url('');"
       />
       <div class="item__right">
-        <div class="item__value">{{ PlayerObj.inventory }}</div>
-        <div class="item__current-value">{{ PlayerObj.inventory }}</div>
+        <div class="item__value">{{ PlayerObj.inventory.size }}</div>
+        <div class="item__current-value">{{ PlayerObj.inventory.sizeFilled }}</div>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
       }
     },
 
-    mounted () {
+    created () {
       this.PlayerObj = Object.assign({}, Player);
     },
   }
@@ -64,8 +64,8 @@
       margin-right: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, .2);
       display: flex;
-      padding: 5px 10px;
-      border-radius: 20px;
+      padding: 3px 10px;
+      border-radius: 15px;
       width: 100%;
       flex-shrink: 1;
       align-items: center;
@@ -84,9 +84,9 @@
 
       }
       &__value {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1em;
-        color: $primary-color;
+        color: var(--primary-color);
       }
       &__current-value {
         font-size: 12px;

@@ -1,13 +1,14 @@
 <template>
   <div class="header">
-    <div class="header__burger">
+    <div 
+      class="header__burger nav-toggler"
+      v-on:click="toggleNav()"
+    >
       <span />
       <span />
       <span />
     </div>
-    <div class="header__title">
-      {{ title }}
-    </div>
+    <div class="header__title">Title</div>
     <div class="header__nav" style="display: none;">
       <ul>
         <li><a href="#">item 1</a></li>
@@ -16,17 +17,6 @@
         <li><a href="#">item 4</a></li>
       </ul>
     </div>
-    <!-- <ul>
-      <li
-        v-for="(link, index) in links"
-        :key="index"
-      >
-        {{ link }}
-      </li>
-      <li v-if="showAge">
-        Age {{ age }}
-      </li>
-    </ul> -->
   </div>
 </template>
 
@@ -34,29 +24,18 @@
 export default {
   name: 'HeaderCompo',
 
-  props: {
-    age: {
-      type: Number, // String, Array, Object, Boolean
-      default: 0,
-    },
-    showAge: {
-      type: Boolean,
-      default: false,
-    },
-    title: {
-      type: String,
-      default: 'Pocket combats',
-    },
-  },
-
   data () {
     return {
-      links: [
-        'link 1',
-        'link 10',
-        'link 100',
-      ],
+
     }
+  },
+
+  methods: {
+    toggleNav: function () {
+      // event.preventDefault();
+      // alert('click');
+      console.log(this);
+    },
   },
 }
 </script>
@@ -94,7 +73,7 @@ export default {
     }
     &__title {
       font-size: 30px;
-      color: $primary-color;
+      color: var(--primary-color);
     }
   }
 </style>

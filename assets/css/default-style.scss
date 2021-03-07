@@ -2,10 +2,10 @@
   box-sizing: border-box;
 }
 body {
-  background-color: $bgc;
+  background-color: var(--bgc);
   font-family: 'Arial', 'sans-serif';
   margin: 0;
-  color: $secondary-color;
+  color: var(--secondary-color);
 }
 ul, ol {
   margin: 0;
@@ -18,8 +18,15 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .container-grid {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 20px;
   max-width: 375px;
   margin-right: auto;
   margin-left: auto;
+}
+.component-title {
+  color: var(--primary-color);
+  font-size: 1rem;
+  line-height: normal;
+  font-weight: bold;
+  margin-bottom: 1em;
 }

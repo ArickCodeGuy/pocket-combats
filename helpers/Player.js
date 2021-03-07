@@ -8,4 +8,6 @@ export const Player = {
     // may be a function that returns value
     sizeFilled: 17,
   },
+  // x, y
+  position: [1, 1],
 }

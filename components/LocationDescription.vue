@@ -1,7 +1,7 @@
 <template>
   <div class="location-description">
-    <div class="location-description__title"> {{ Location.title }} </div>
-    <div class="location-description__description"> {{ Location.description }} </div>
+    <div class="location-description__title"> title </div>
+    <div class="location-description__description"> description </div>
   </div>
 </template>
 
@@ -11,11 +11,12 @@
 
     data () {
       return {
-        Location: {
-          title: 'Location name',
-          description: 'Lorem ipsum ...',
-        },
+        // LocationsObj: {},
+        // PlayerObj: {},
       }
+    },
+
+    created () {
     },
   }
 </script>
@@ -30,7 +31,7 @@
       font-size: 1.2rem;
       margin-bottom: .2em;
       font-weight: 600;
-      color: $primary-color;
+      color: var(--primary-color);
     }
     &__description {
       font-size: .9rem;

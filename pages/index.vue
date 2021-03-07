@@ -1,24 +1,23 @@
 <template>
   <div class="container container-grid">
     <!-- <Logo /> -->
-    <Header 
-      :showAge="true"
-      :age="age"
-    />
+    <Header />
     <PlayerStats />
     <LocationDescription />
+    <Transitions />
+    <PlayerList />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'InfoPage',
+  // name: 'InfoPage',
 
   data () {
     return {
-      name: 'Anton',
-      age: 18,
-      plusAge: 10,
+      // name: 'Anton',
+      // age: 18,
+      // plusAge: 10,
     }
   },
 
